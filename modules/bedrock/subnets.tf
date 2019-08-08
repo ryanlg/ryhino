@@ -41,3 +41,25 @@ resource "aws_subnet" "bedrock_public_1b" {
     "Name" = "ryanl-subnet-bedrock-public-1b"
   })
 }
+
+resource "aws_subnet" "bedrock_sealed_1a" {
+
+  vpc_id            = "${aws_vpc.bedrock.id}"
+  cidr_block        = "10.0.201.0/24"
+  availability_zone = "us-east-1a"
+
+  tags = merge(var.global_tags, {
+    "Name" = "ryanl-subnet-bedrock-sealed-1a"
+  })
+}
+
+resource "aws_subnet" "bedrock_sealed_1b" {
+
+  vpc_id            = "${aws_vpc.bedrock.id}"
+  cidr_block        = "10.0.202.0/24"
+  availability_zone = "us-east-1b"
+
+  tags = merge(var.global_tags, {
+    "Name" = "ryanl-subnet-bedrock-sealed-1b"
+  })
+}
