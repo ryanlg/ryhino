@@ -1,4 +1,4 @@
-resource "aws_eip" "ryanl_eip_ngw_bedrock" {
+resource "aws_eip" "ngw_bedrock" {
   vpc = true
 
   tags = merge(var.global_tags, {

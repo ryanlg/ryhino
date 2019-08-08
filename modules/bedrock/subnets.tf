@@ -1,6 +1,6 @@
-resource "aws_subnet" "ryanl_subnet_bedrock_private_1a" {
+resource "aws_subnet" "bedrock_private_1a" {
 
-  vpc_id            = "${aws_vpc.ryanl_vpc_bedrock.id}"
+  vpc_id            = "${aws_vpc.bedrock.id}"
   cidr_block        = "10.0.1.0/24"
   availability_zone = "us-east-1a"
 
@@ -9,9 +9,9 @@ resource "aws_subnet" "ryanl_subnet_bedrock_private_1a" {
   })
 }
 
-resource "aws_subnet" "ryanl_subnet_bedrock_private_1b" {
+resource "aws_subnet" "bedrock_private_1b" {
 
-  vpc_id            = "${aws_vpc.ryanl_vpc_bedrock.id}"
+  vpc_id            = "${aws_vpc.bedrock.id}"
   cidr_block        = "10.0.2.0/24"
   availability_zone = "us-east-1b"
 
@@ -20,9 +20,9 @@ resource "aws_subnet" "ryanl_subnet_bedrock_private_1b" {
   })
 }
 
-resource "aws_subnet" "ryanl_subnet_bedrock_public_1a" {
+resource "aws_subnet" "bedrock_public_1a" {
 
-  vpc_id            = "${aws_vpc.ryanl_vpc_bedrock.id}"
+  vpc_id            = "${aws_vpc.bedrock.id}"
   cidr_block        = "10.0.101.0/24"
   availability_zone = "us-east-1a"
 
@@ -31,9 +31,9 @@ resource "aws_subnet" "ryanl_subnet_bedrock_public_1a" {
   })
 }
 
-resource "aws_subnet" "ryanl_subnet_bedrock_public_1b" {
+resource "aws_subnet" "bedrock_public_1b" {
 
-  vpc_id            = "${aws_vpc.ryanl_vpc_bedrock.id}"
+  vpc_id            = "${aws_vpc.bedrock.id}"
   cidr_block        = "10.0.102.0/24"
   availability_zone = "us-east-1b"
 

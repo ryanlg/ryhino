@@ -1,4 +1,4 @@
-resource "aws_vpc" "ryanl_vpc_bedrock" {
+resource "aws_vpc" "bedrock" {
     cidr_block = "10.0.0.0/16"
 
     enable_dns_support = true
