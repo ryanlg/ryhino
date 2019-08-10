@@ -1,27 +1,29 @@
-resource "aws_nat_gateway" "bedrock_private_1a" {
+// @disabled: Expensive
+# resource "aws_nat_gateway" "bedrock_private_1a" {
 
-  allocation_id = "${aws_eip.ngw_bedrock_private_1a.id}"
-  subnet_id     = "${aws_subnet.bedrock_private_1a.id}"
+#   allocation_id = "${aws_eip.ngw_bedrock_private_1a.id}"
+#   subnet_id     = "${aws_subnet.bedrock_private_1a.id}"
 
-  depends_on = [
-    "aws_internet_gateway.bedrock"
-  ]
+#   depends_on = [
+#     "aws_internet_gateway.bedrock"
+#   ]
 
-  tags = merge(var.global_tags, {
-    "Name" = "ryan-ngw-bedrock-private-1a"
-  })
-}
+#   tags = merge(var.global_tags, {
+#     "Name" = "ryan-ngw-bedrock-private-1a",
+#   })
+# }
 
-resource "aws_nat_gateway" "bedrock_private_1b" {
+// @disabled: Expensive
+# resource "aws_nat_gateway" "bedrock_private_1b" {
 
-  allocation_id = "${aws_eip.ngw_bedrock_private_1b.id}"
-  subnet_id     = "${aws_subnet.bedrock_private_1b.id}"
+#   allocation_id = "${aws_eip.ngw_bedrock_private_1b.id}"
+#   subnet_id     = "${aws_subnet.bedrock_private_1b.id}"
 
-  depends_on = [
-    "aws_internet_gateway.bedrock"
-  ]
+#   depends_on = [
+#     "aws_internet_gateway.bedrock"
+#   ]
 
-  tags = merge(var.global_tags, {
-    "Name" = "ryan-ngw-bedrock-private-1b"
-  })
-}
+#   tags = merge(var.global_tags, {
+#     "Name" = "ryan-ngw-bedrock-private-1b",
+#   })
+# }
