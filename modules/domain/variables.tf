@@ -6,3 +6,8 @@ variable "ryanl_domain_bedrock" {
 variable "global_tags" {
   description = "Global tags"
 }
+
+variable "ryanl_google_domain_email_servers" {
+
+  description = "Servers for email forwarding from Google Domain"
+}
