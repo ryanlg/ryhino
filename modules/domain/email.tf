@@ -1,5 +1,5 @@
 resource "aws_route53_record" "bedrock_email_forwarding" {
-  zone_id = "${aws_route53_zone.bedrock.zone_id}"
+  zone_id = aws_route53_zone.bedrock.zone_id
 
   name = ""
   type = "MX"
