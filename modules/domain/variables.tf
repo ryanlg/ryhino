@@ -30,3 +30,9 @@ variable "ryanl_domain_lets_encrypt_verify_record" {
   type        = list(string)
   description = "Verification for Let's Encrypt"
 }
+
+variable "ec2_jumper_id" {
+
+  type        = string
+  description = "Jumper ID"
+}
