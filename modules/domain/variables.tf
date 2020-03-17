@@ -24,3 +24,9 @@ variable "ryanl_domain_gitlab_verify_record" {
   type        = list(string)
   description = "Verification for Gitlab Pages"
 }
+
+variable "ryanl_domain_lets_encrypt_verify_record" {
+
+  type        = list(string)
+  description = "Verification for Let's Encrypt"
+}
