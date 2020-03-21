@@ -34,6 +34,14 @@ resource "aws_subnet" "bedrock_public_1a" {
   })
 }
 
+// For OpenVPN on Jumper
+resource "aws_subnet" "bedrock_public_1a_jumper" {
+
+  vpc_id            = "${aws_vpc.bedrock.id}"
+  cidr_block        = "10.0.103.0/24"
+  availability_zone = "us-east-1a"
+}
+
 resource "aws_subnet" "bedrock_public_1b" {
 
   vpc_id            = "${aws_vpc.bedrock.id}"
@@ -45,6 +53,9 @@ resource "aws_subnet" "bedrock_public_1b" {
   })
 }
 
+
+// @disabled: Not used
+/*
 resource "aws_subnet" "bedrock_sealed_1a" {
 
   vpc_id            = "${aws_vpc.bedrock.id}"
@@ -66,3 +77,4 @@ resource "aws_subnet" "bedrock_sealed_1b" {
     "Name" = "ryanl-subnet-bedrock-sealed-1b"
   })
 }
+*/

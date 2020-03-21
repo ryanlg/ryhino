@@ -20,5 +20,11 @@ resource "aws_instance" "sky_ec2_jumper" {
   ami            = data.aws_ami.sky_ami_ubuntu.id
   instance_type  = "t2.micro"
 
+  vpc_security_group_ids = [
+    aws_security_group.sg_jumper.id
+  ]
+
+  key_name = aws_key_pair.ec2_jumper.key_name
+
   tags = var.global_tags
 }
