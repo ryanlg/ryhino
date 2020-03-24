@@ -1,23 +1,11 @@
-// @disabled: Expensive
-# resource "aws_eip" "ngw_bedrock_private_1a" {
-#   vpc = true
-
-#   tags = merge(var.global_tags, {
-#     "Name" = "ryan-eip-ngw-bedrock-private-1a"
-#   })
-# }
-
-// @disabled: Expensive
-# resource "aws_eip" "ngw_bedrock_private_1b" {
-#   vpc = true
-
-#   tags = merge(var.global_tags, {
-#     "Name" = "ryan-eip-ngw-bedrock-private-1b"
-#   })
-# }
-
-resource "aws_eip" "eip_ec2_jumper" {
+resource "aws_eip" "ec2_jumper_public" {
   vpc      = true
 
-  instance = aws_instance.sky_ec2_jumper.id
+  network_interface = aws_network_interface.jumper_public.id
+}
+
+resource "aws_eip" "ec2_jumper_tunnel" {
+  vpc      = true
+
+  network_interface = aws_network_interface.jumper_tunnel.id
 }
