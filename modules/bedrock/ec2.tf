@@ -20,6 +20,8 @@ resource "aws_instance" "jumper" {
 
   key_name = aws_key_pair.ec2_jumper.key_name
 
+  disable_api_termination = true
+
   network_interface {
     network_interface_id = aws_network_interface.jumper_public.id
     device_index = 0
