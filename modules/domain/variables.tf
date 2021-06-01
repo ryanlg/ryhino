@@ -24,6 +24,11 @@ variable "ec2_jumper_ips" {
   description = "Jumper ID"
 }
 
+variable "protonmail_txt" {
+  type = list(string)
+  description = "Verification for Proton Mail's custom domain"
+}
+
 variable "global_tags" {
   description = "Global tags"
 }
