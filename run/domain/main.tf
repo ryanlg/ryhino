@@ -14,6 +14,7 @@ locals {
   ]
 
   lets_encrypt_txt = ["fzgdrWydd3ol6UulQ90Ashb7bNvBHWukTqdXSvS1rdA"]
+  protonmail_txt   = ["protonmail-verification=4f793977cffc94e45c6fb377482accd12596bee4"]
 
   ec2_jumper_ips   = data.terraform_remote_state.bedrock.outputs.ec2_jumper_ips
 }
@@ -27,6 +28,7 @@ module "ryanl_domain" {
   gmail_servers                           = local.gmail_server
   ec2_jumper_ips                          = local.ec2_jumper_ips
   lets_encrypt_txt                        = local.lets_encrypt_txt
+  protonmail_txt                          = local.protonmail_txt
 
   global_tags                             = local.global_tags
 }

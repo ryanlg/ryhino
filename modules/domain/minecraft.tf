@@ -6,7 +6,7 @@ resource "aws_route53_record" "minecraft" {
   ttl  = "3600"
 
   records = [
-    var.ec2_jumper_ips.public
+    "147.135.37.190"
   ]
 }
 
