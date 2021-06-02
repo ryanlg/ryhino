@@ -9,6 +9,18 @@ variable "gmail_servers" {
   description = "Servers for email forwarding from Google Domain"
 }
 
+variable "protonmail_servers" {
+
+  type        = list(string)
+  description = "Forward email to Proton Mail servers"
+}
+
+variable "protonmail_dkim" {
+
+  type        = set(object({ name = string, record = string }))
+  description = "CNAME records for protonmail's DKIM"
+}
+
 variable "lets_encrypt_txt" {
 
   type        = list(string)

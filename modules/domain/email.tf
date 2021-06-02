@@ -5,5 +5,5 @@ resource "aws_route53_record" "email_forwarding" {
   type = "MX"
   ttl  = "3600"
 
-  records = var.gmail_servers
+  records = var.protonmail_servers
 }
