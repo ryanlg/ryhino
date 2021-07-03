@@ -1,5 +1,5 @@
 resource "aws_default_network_acl" "this" {
-  default_network_acl_id = "${aws_vpc.bedrock.default_network_acl_id}"
+  default_network_acl_id = aws_vpc.bedrock.default_network_acl_id
 
   ingress {
     protocol   = -1
