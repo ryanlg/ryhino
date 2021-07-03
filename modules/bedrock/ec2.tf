@@ -15,6 +15,10 @@ data "aws_ami" "ubuntu_bionic_lts" {
 }
 
 resource "aws_instance" "jumper" {
+
+  # Diable the jumper until furthure notice
+  count = 0
+
   ami            = data.aws_ami.ubuntu_bionic_lts.id
   instance_type  = "t2.micro"
 
