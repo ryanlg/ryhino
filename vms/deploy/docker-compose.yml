@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  tftp:
+    build:
+      context: tftp
+    ports:
+      - "69:69/udp"
+    volumes:
+      - ${ESXI_PXE_DIR:?Missing host path to PXE files to be exposed by TFTP in .env}:/tftpboot:ro
+    container_name: "tftp"
+    restart: always
+
+  syslog_ng:
+    image: balabit/syslog-ng:latest
+    ports:
+      - "514:514"
+      - "514:514/udp"
+      - "601:601"
+    volumes:
+      - ${SYSLOG_NG_CONF:?Missing host path to syslog_ng config file}:/etc/syslog-ng/syslog-ng.conf
+      - ${SYSLOG_NG_LOG_DIR:-deploy_logs}:/var/log
+    container_name: "syslog-ng"
+    restart: always
+
+volumes:
+  deploy_logs:

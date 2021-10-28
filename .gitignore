@@ -1,2 +1,6 @@
+# Terraform
 tf.plan
 .terraform
+
+# Docker
+.env
