@@ -21,21 +21,6 @@ variable "protonmail_dkim" {
   description = "CNAME records for protonmail's DKIM"
 }
 
-variable "lets_encrypt_txt" {
-
-  type        = list(string)
-  description = "Verification for Let's Encrypt"
-}
-
-variable "ec2_jumper_ips" {
-
-  type = object({
-    tunnel = string
-    public = string
-  })
-  description = "Jumper ID"
-}
-
 variable "protonmail_txt" {
   type = list(string)
   description = "Verification for Proton Mail's custom domain"

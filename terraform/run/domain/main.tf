@@ -33,13 +33,10 @@ locals {
     }
   ]
 
-  lets_encrypt_txt = ["fzgdrWydd3ol6UulQ90Ashb7bNvBHWukTqdXSvS1rdA"]
   protonmail_txt   = [
     "protonmail-verification=4f793977cffc94e45c6fb377482accd12596bee4",
     "v=spf1 include:_spf.protonmail.ch mx ~all",
   ]
-
-  ec2_jumper_ips   = data.terraform_remote_state.bedrock.outputs.ec2_jumper_ips
 }
 
 
@@ -49,8 +46,6 @@ module "ryanl_domain" {
   ryanl_domain_bedrock                    = local.bedrock_domain
 
   gmail_servers                           = local.gmail_server
-  ec2_jumper_ips                          = local.ec2_jumper_ips
-  lets_encrypt_txt                        = local.lets_encrypt_txt
   protonmail_txt                          = local.protonmail_txt
   protonmail_servers                      = local.protonmail_servers
   protonmail_dkim                         = local.protonmail_dkim
