@@ -9,6 +9,7 @@
         - user: root
         - group: root
         - mode: 700
+        - makedirs: True
 
     cron.present:
         - identifier: "os-audo-update"
