@@ -1,0 +1,1 @@
+../../scripts/os/files/dnf-upgrade-and-reboot.sh
